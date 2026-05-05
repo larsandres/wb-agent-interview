@@ -1,0 +1,32 @@
+[
+  {
+    "query": "How much did I spend on groceries in the last 30 days?",
+    "gold_total": 149.18,
+    "gold_reference": "The total spent on groceries over the last 30 days is $149.18."
+  },
+  {
+    "query": "What was my restaurant spend in the last 7 days?",
+    "gold_total": 42.15,
+    "gold_reference": "Restaurant spending for the last 7 days totals $42.15."
+  },
+  {
+    "query": "Show travel transactions for the last 14 days",
+    "gold_total": 220.0,
+    "gold_reference": "Travel spending over the past 14 days is $220.00."
+  },
+  {
+    "query": "Show travel transactions for the last fourteen days",
+    "gold_total": 220.0,
+    "gold_reference": "Travel spending over the past fourteen days is $220.00."
+  },
+  {
+    "query": "How much shopping spend in the last 30 days?",
+    "gold_total": 322.18,
+    "gold_reference": "Shopping category spend for the last 30 days is $322.18."
+  },
+  {
+    "query": "Total spent on groceries last 14 days",
+    "gold_total": 18.9,
+    "gold_reference": "Groceries spending for the last 14 days amounts to $18.90."
+  }
+]

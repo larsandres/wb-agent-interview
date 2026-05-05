@@ -1,0 +1,26 @@
+[
+  {
+    "query": "What happens if my checking account goes below zero?",
+    "gold_reference": "Overdraft Fee Policy:\nIf your checking account balance goes below zero, an overdraft fee may be charged per transaction. Fees are capped at 3 overdraft charges per day. Deposits posted before cutoff may reduce overdraft impact."
+  },
+  {
+    "query": "How is credit card interest calculated when I don't pay in full?",
+    "gold_reference": "Credit Card Interest Policy:\nCredit card interest is charged when statement balances are not paid in full by the due date. Interest is calculated using average daily balance and the annual percentage rate (APR)."
+  },
+  {
+    "query": "When is my minimum payment due?",
+    "gold_reference": "Payment Rules:\nMinimum payments are due by 11:59 PM local time on the due date. Late payments may trigger a late fee and can increase your APR after repeated misses."
+  },
+  {
+    "query": "How long do I have to report an unauthorized charge?",
+    "gold_reference": "Dispute and Chargeback Rule:\nCardholders should report unauthorized charges within 60 days of statement date. Temporary credit may be issued while investigation is in progress."
+  },
+  {
+    "query": "checking account below zero overdraft fee per transaction daily cap deposits cutoff",
+    "gold_reference": "International Wire Policy:\nOutbound international wires submitted after 2:00 PM ET are processed the next business day. Correspondent bank fees may be deducted from the transfer amount and are not controlled by us."
+  },
+  {
+    "query": "credit card interest APR average daily balance statement not paid in full by due date",
+    "gold_reference": "Safe Deposit Box Policy:\nBox rental is billed annually in advance. Lost keys incur a drilling fee; contents remain customer property and are released only after identity verification."
+  }
+]
