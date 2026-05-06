@@ -1,0 +1,31 @@
+user_input,expected_route
+"How much did I spend on groceries in the last 30 days?",transactions
+"What happens if my checking account goes below zero?",rag
+"If I dispute a grocery charge from last week how long does that take and what is the fee?",rag
+"Total restaurant spending in the last 7 days",transactions
+"What is the APR on purchases and does it apply to restaurant charges?",rag
+"Compare my travel category spend last month to the month before",transactions
+"Can I add overdraft protection and what does it cost per month?",rag
+"Show me all transactions tagged groceries over fifty dollars in March",transactions
+"Are foreign transaction fees waived if I use the card for dining in Europe?",rag
+"Average daily spend on coffee for the last ninety days",transactions
+"What documents do I need to refinance and what are typical closing costs?",rag
+"Cryptocurrency purchases total this quarter broken down by month",transactions
+"Is cryptocurrency trading allowed under your acceptable use policy?",rag
+"Combine grocery and restaurant totals for January through March",transactions
+"Why was my card declined at the grocery store even though I had money?",rag
+"List fuel purchases and the running total for last month",transactions
+"How long until a refund shows on my statement after a merchant reversal?",rag
+"Refund dollar amount credited for my hotel booking in April",transactions
+"Mobile deposit limits per day and per check for personal accounts",rag
+"Deposit amounts posted to checking in the last sixty days",transactions
+"Your privacy policy on who can see my spending by category",rag
+"Merchant double-charged my dinner; what should I do and what are my rights?",rag
+"I think someone duplicated a grocery charge — show me matching amounts on my statement",transactions
+"What happens to automatic payments if my checking balance hits zero?",rag
+"Automatic subscription charges total for streaming last billing cycle",transactions
+"Dispute a transaction vs ask how much I spent on gas last week — I need both",rag
+"Gas station spend last weekend only",transactions
+"Interest rate on savings vs checking and minimum balance to waive fees",rag
+"Minimum balance fee history on my checking for the past year",transactions
+"Rewards points on dining purchases last quarter and when do they expire",rag

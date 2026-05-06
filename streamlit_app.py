@@ -35,32 +35,6 @@ def _run_agent_in_thread(query: str) -> dict:
         return run_agent(query)
 
 
-def _st_json_or_null(label: str, value: object) -> None:
-    """st.json() rejects Python None; Streamlit expects a JSON object/array."""
-    st.markdown(f"**{label}**")
-    if value is None:
-        st.caption("null")
-    else:
-        st.json(value)
-
-
-def _render_debug(trace: dict) -> None:
-    with st.expander("Debug panel", expanded=False):
-        st.markdown("**route**")
-        st.code(trace["route"], language="text")
-        st.markdown("**router_reason**")
-        st.code(trace["router_reason"], language="text")
-        st.markdown("**router_confidence**")
-        rc = trace.get("router_confidence")
-        if rc is None:
-            st.caption("not recorded (older message)")
-        else:
-            st.metric("confidence", float(rc))
-        _st_json_or_null("tool_input", trace["tool_input"])
-        _st_json_or_null("tool_output", trace["tool_output"])
-        _st_json_or_null("retrieved_docs", trace["retrieved_docs"])
-
-
 st.set_page_config(page_title="Financial Support Agent", page_icon="💬")
 head_l, head_r = st.columns([4, 1])
 with head_l:
@@ -93,14 +67,11 @@ quick_queries = [
 for col, (label, query) in zip((c1, c2, c3), quick_queries):
     with col:
         if st.button(label, use_container_width=True):
-            result = _run_agent_in_thread(query)
+            with st.spinner("Getting a response..."):
+                result = _run_agent_in_thread(query)
             st.session_state.messages.append({"role": "user", "content": query})
             st.session_state.messages.append(
-                {
-                    "role": "assistant",
-                    "content": result["final_answer"],
-                    "trace": result,
-                }
+                {"role": "assistant", "content": result["final_answer"]}
             )
             st.rerun()
 
@@ -109,18 +80,13 @@ st.divider()
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
-        if message.get("trace"):
-            _render_debug(message["trace"])
 
 user_input = st.chat_input("Type your question...")
 if user_input:
-    result = _run_agent_in_thread(user_input)
+    with st.spinner("Getting a response..."):
+        result = _run_agent_in_thread(user_input)
     st.session_state.messages.append({"role": "user", "content": user_input})
     st.session_state.messages.append(
-        {
-            "role": "assistant",
-            "content": result["final_answer"],
-            "trace": result,
-        }
+        {"role": "assistant", "content": result["final_answer"]}
     )
     st.rerun()

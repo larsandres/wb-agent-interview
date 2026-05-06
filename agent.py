@@ -107,6 +107,7 @@ def run_agent(query: str) -> dict[str, Any]:
         "route": route,
         "router_reason": router_reason,
         "router_confidence": router_confidence,
+        "context": context,
         "tool_used": tool_used,
         "tool_input": tool_input,
         "tool_output": tool_output,

@@ -6,7 +6,7 @@ from openai import OpenAI
 load_dotenv()
 
 
-@weave.op()
+@weave.op(kind="LLM")
 def generate_response(context: str, query: str) -> str:
     """
     Response generation via OpenAI chat completions.
