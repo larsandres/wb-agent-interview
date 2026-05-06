@@ -1,5 +1,4 @@
 import json
-import os
 import weave
 from datetime import date, timedelta
 from pathlib import Path
@@ -12,20 +11,11 @@ def _load_transactions() -> list[dict]:
     with DATA_PATH.open("r", encoding="utf-8") as f:
         return json.load(f)
 
-
-def _as_of_date() -> date:
-    """Use TRANSACTION_EVAL_AS_OF (ISO date) when set for reproducible evals; else real today."""
-    raw = os.getenv("TRANSACTION_EVAL_AS_OF")
-    if raw:
-        return date.fromisoformat(raw)
-    return date.today()
-
-
-@weave.op()
+@weave.op(kind="TOOL")
 def get_spend(category: str, days: int) -> dict:
     """Return structured spend summary for a category over the last N days."""
     transactions = _load_transactions()
-    today = _as_of_date()
+    today = date.today()
     window_start = today - timedelta(days=days)
 
     total = 0.0

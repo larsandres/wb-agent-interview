@@ -9,7 +9,7 @@ def _load_chunks() -> list[str]:
     text = DOCS_PATH.read_text(encoding="utf-8").strip()
     return [chunk.strip() for chunk in text.split("\n\n") if chunk.strip()]
 
-@weave.op()
+@weave.op(kind="TOOL")
 def retrieve_docs(query: str) -> dict:
     """
     Return top 2–3 keyword-scored chunks with explicit scores.
